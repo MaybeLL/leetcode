@@ -1,0 +1,27 @@
+{
+
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "g++.exe build and debug active file",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}/build/${fileBasenameNoExtension}.exe",
+            "args": [],
+            "stopAtEntry": false,//进入主函数即开始调试，设为false则在断点处停。
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "miDebuggerPath": "E:\\mingw64\\bin\\gdb.exe",
+            "setupCommands": [
+                {
+                    "description": "涓� gdb 鍚敤鏁撮綈鎵撳嵃",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "g++.exe build active file"
+        }
+    ]
+}
