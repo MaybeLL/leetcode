@@ -6,7 +6,7 @@ using namespace std;
 
 class Solution_6 {
 public:
-    string longestPalindrome(string s) {
+    string func6(string s) {
         cout<<"这是6"<<endl;
     }
 };

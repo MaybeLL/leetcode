@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.12)
 project(leetcode)
 # set(变量 值)
 set(CMAKE_CXX_STANDARD 11)
-set(SOURCE_FILES main.cpp dp/5.cpp dp/6.cpp)
+set(SOURCE_FILES main.cpp  dp/53.cpp)
 #指定生成目标
 add_executable(leetcode ${SOURCE_FILES})
 
