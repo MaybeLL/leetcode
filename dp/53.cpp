@@ -26,63 +26,52 @@
 //using namespace std;
 
 class Solution_53 {
-public:
-    int maxSubArray(std::vector<int>& nums) {
-
-        int res=*nums.begin();
-        for(std::vector<int>::iterator i=nums.begin();i<nums.end();i++)
-        {
-            int imax=*i;
-            for(std::vector<int>::iterator j=nums.end()-1;j>i;j--)
-            {
-                if (sum(nums,i,j)>imax)
-                {
-                    imax = sum(nums,i,j);
-                }
-            }
-            if (imax>res)
-            {
-                res=imax;
-            }
-        }
-        return res;
-    }
-
-//    int maxSubArray2(std::vector<int>& nums)
-//    {
-//        int res;
-//        std::vector<std::vector<int>::iterator> idx = {};
-//        for(std::vector<int>::iterator i=nums.begin();i<nums.end();i++){
-//            if(*i>=0)
-//            {
-//                idx.push_back(i);
-//            }
-//        }
-//
-//        //全负
-//        if(idx.empty())
-//        {
-//            //返回最大元素（）负数
-//            for(std::vector<int>::iterator i=nums.begin();i<nums.end();i++)
-//            {
-//                if(*i>res)
-//                {
-//                    res=*i;
+//    1.暴力法
+//public:
+//    int maxSubArray(std::vector<int> &nums) {
+//        int res = *nums.begin();
+//        for (std::vector<int>::iterator i = nums.begin(); i < nums.end(); i++) {
+//            int imax = 0;
+//            for (std::vector<int>::iterator j = i; j < nums.end(); j++) {
+//                imax += *j;
+//                if (imax > res) {
+//                    res = imax;
 //                }
 //            }
-//            return res;
 //        }
+//        return res;
 //    }
-private:
+
+//  2.dp
 //public:
-    int sum(std::vector<int>& nums,std::vector<int>::iterator left,std::vector<int>::iterator right){
-        int sum=0;
-        for(std::vector<int>::iterator it=left;it<=right;it++)
-        {
-            sum+=*it;
-        }
-        return sum;
-    }
+//    int maxSubArray(std::vector<int> &nums) {
+//        int sum = 0;
+//        int ans = nums[0];
+//        for(int i =0;i < nums.size();i++)
+//        {
+//            if(sum<=0)
+//            {
+//                sum = nums[i];
+//                ans = (((ans) > (sum)) ? (ans) : (sum));
+//            }
+//            else
+//            {
+//                sum+=nums[i];
+//                ans = ((ans) > (sum)) ? (ans) : (sum);
+//            }
+//        }
+//        return ans;
+//    }
+
+//  3.分治法
+//public:
+//    int maxSubArray(std::vector<int> &nums) {
+//
+//        return ;
+//    }
 };
+
+
+
 
 

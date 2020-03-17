@@ -1,15 +1,14 @@
 #include "iostream"
-#include "dp/53.cpp"
+#include "dp/198.cpp"
+#include <map>
+
 using namespace std;
 
-int main()
-{
-
-    vector<int>a={-2};
-    Solution_53 solution;
-
-    int res = solution.maxSubArray(a);
-    cout<<res<<endl;
+int main() {
+    Solution_198 solution;
+    vector<int> prices = {2, 7, 6, 3, 1};
+    int res = solution.rob(prices);
+    cout << res << endl;
 
     return 0;
 
