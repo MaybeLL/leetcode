@@ -1,15 +1,16 @@
-#include "iostream"
-#include "dp/198.cpp"
-#include <map>
+#include <iostream>
+#include "dp/392.cpp"
+#include  <string>
 
 using namespace std;
 
 int main() {
-    Solution_198 solution;
-    vector<int> prices = {2, 7, 6, 3, 1};
-    int res = solution.rob(prices);
-    cout << res << endl;
-
+    string s = "he";
+    string t = "hell";
+    Solution solution;
+    if (solution.isSubsequence(s, t)) {
+        cout << "true" << endl;
+    }
     return 0;
 
 }
