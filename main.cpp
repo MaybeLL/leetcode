@@ -1,16 +1,15 @@
 #include <iostream>
-#include "dp/392.cpp"
+#include "dp/anmoshi.cpp"
 #include  <string>
+#include <vector>
 
 using namespace std;
 
 int main() {
-    string s = "he";
-    string t = "hell";
+    vector<int> cost={2,7,9,3,1};
     Solution solution;
-    if (solution.isSubsequence(s, t)) {
-        cout << "true" << endl;
-    }
+    int res = solution.massage(cost);
+    cout<<res<<endl;
     return 0;
 
 }
