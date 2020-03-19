@@ -1,15 +1,17 @@
 #include <iostream>
-#include "dp/anmoshi.cpp"
+#include "dp/91.cpp"
 #include  <string>
 #include <vector>
 
 using namespace std;
 
 int main() {
-    vector<int> cost={2,7,9,3,1};
     Solution solution;
-    int res = solution.massage(cost);
+    string s = "110";
+    int res =solution.numDecodings(s);
     cout<<res<<endl;
+//    int res = solution.massage(cost);
+//    cout<<res<<endl;
     return 0;
 
 }
