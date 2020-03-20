@@ -1,5 +1,5 @@
 #include <iostream>
-#include "dp/91.cpp"
+#include "dp/139.cpp"
 #include  <string>
 #include <vector>
 
@@ -7,11 +7,14 @@ using namespace std;
 
 int main() {
     Solution solution;
-    string s = "110";
-    int res =solution.numDecodings(s);
+//    s = "leetcode", wordDict = ["leet", "code"]
+//    "bb"
+//    ["a","b","bbb","bbbb"]
+    string s = "bb";
+    vector<string> wordDict={"a","b","bbb","bbbb"};
+    bool res =solution.wordBreak(s,wordDict);
     cout<<res<<endl;
-//    int res = solution.massage(cost);
-//    cout<<res<<endl;
     return 0;
+
 
 }
