@@ -7,6 +7,7 @@
 using namespace std;
 
 class Solution {
+//双指针法
 public:
     bool isSubsequence(string s, string t) {
         string::iterator i;
