@@ -1,5 +1,5 @@
 #include <iostream>
-#include "dp/392.cpp"
+#include "dp/reader_writer.cpp"
 #include  <string>
 
 using namespace std;
