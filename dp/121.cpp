@@ -94,3 +94,10 @@ class Solution_121 {
 //    3.股票交易
 
 };
+
+
+//多次交易
+//profit[i，j]为交易最大盈利，
+//profit[i，i]=0;profit[i，i+1]=nums[i+1]-nums[i];
+//profit[i，i+2]=nums[i+1]-nums[i];
+//profit[0，i] = profit[0，j]+profit[j+1,i]

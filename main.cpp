@@ -1,5 +1,5 @@
 #include <iostream>
-#include "dp/139.cpp"
+#include "dp/300.cpp"
 #include  <string>
 #include <vector>
 
@@ -10,11 +10,12 @@ int main() {
 //    s = "leetcode", wordDict = ["leet", "code"]
 //    "bb"
 //    ["a","b","bbb","bbbb"]
-    string s = "bb";
-    vector<string> wordDict={"a","b","bbb","bbbb"};
-    bool res =solution.wordBreak(s,wordDict);
+//    string s = "bb";
+    vector<int> test={10,9,2,5,3,7,101,18,19};
+    int res =solution.lengthOfLIS(test);
     cout<<res<<endl;
     return 0;
+
 
 
 }
