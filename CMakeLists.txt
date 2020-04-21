@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.12)
 project(leetcode)
 # set(变量 值)
 set(CMAKE_CXX_STANDARD 11)
-set(SOURCE_FILES main.cpp   Tree/middle/129.cpp Tree/middle/144.cpp)
+set(SOURCE_FILES main.cpp  Divide-and-conquer/215.cpp Sort/quicksort.cpp Sort/heapsort.cpp Greedy/122.cpp Greedy/455.cpp)
 #指定生成目标
 add_executable(leetcode ${SOURCE_FILES})
 

@@ -22,67 +22,56 @@ struct TreeNode {
 
 //很牛逼的思路
 //递归函数尽量写成无返回值,采用传引用方式,来避免返回值
-
 class Solution {
 public:
+    //根和左右子树的拼接
     vector<vector<int>> pathSum(TreeNode* root, int sum) {
-        vector<vector<int>> vec1;
-        vector<int>vec2;
-        solve(root,vec1,vec2,sum);
-        return vec1;
+        vector<vector<int>> res;
+        vector<int> cur_path;
+        helper(root,res,cur_path,sum);
+        return res;
     }
-    void solve(TreeNode *root,vector<vector<int>> &total,vector<int>thisTotal,int sum)
-    {
-        if(!root)
+
+    void helper(TreeNode* cur,vector<vector<int>> &res,vector<int> cur_path,int cur_sum){
+        if(!cur){
             return;
-        sum-=root->val;
-        thisTotal.push_back(root->val);
-        if(!root->left&&!root->right&&sum==0)
-            total.push_back(thisTotal);
-        solve(root->left,total,thisTotal,sum);
-        solve(root->right,total,thisTotal,sum);
+        }
+        if(!cur->left&&!cur->right){
+            if(cur->val==cur_sum){
+                cur_path.push_back(cur_sum);
+                res.push_back(cur_path);
+            }
+            return;
+        }
+        cur_path.push_back(cur->val);
+        //
+        if(cur->left){
+            helper(cur->left,res,cur_path,cur_sum-cur->val);
+        }
+        if(cur->right){
+            helper(cur->right,res,cur_path,cur_sum-cur->val);
+        }
     }
 };
-
-
 //class Solution {
 //public:
-//    //根和左右子树的拼接
 //    vector<vector<int>> pathSum(TreeNode* root, int sum) {
-//        if(root==NULL){
-//            vector<vector<int>> res;
-//            return res;
-//        }
-//        if(root->left==NULL&&root->right==NULL){
-//            if(root->val==sum){
-//                vector<int> tmp(sum);
-//                vector<vector<int>> res;
-//                res.push_back(tmp);
-//                return res;
-//            } else{
-//                vector<vector<int>> res;
-//                return res;
-//            }
-//        }
-//
-//        vector<vector<int>> res;
-//        if(root->left!=NULL){
-//            vector<vector<int>> leftpaths = pathSum(root->left,sum-root->val);
-//            for(auto leftpath:leftpaths){
-//                vector<int> r(root->val);
-//                r.insert(r.end(),leftpath.begin(),leftpath.end());
-//                res.push_back(r);
-//            }
-//        }
-//        if(root->right!=NULL){
-//            vector<vector<int>> rightpaths = pathSum(root->right,sum-root->val);
-//            for(auto rightpath:rightpaths){
-//                vector<int> r(root->val);
-//                r.insert(r.end(),rightpath.begin(),rightpath.end());
-//                res.push_back(r);
-//            }
-//        }
-//
-//        return res;
+//        vector<vector<int>> vec1;
+//        vector<int>vec2;
+//        solve(root,vec1,vec2,sum);
+//        return vec1;
+//    }
+//    void solve(TreeNode *root,vector<vector<int>> &total,vector<int>thisTotal,int sum)
+//    {
+//        if(!root)
+//            return;
+//        sum-=root->val;
+//        thisTotal.push_back(root->val);
+//        if(!root->left&&!root->right&&sum==0)
+//            total.push_back(thisTotal);
+//        solve(root->left,total,thisTotal,sum);
+//        solve(root->right,total,thisTotal,sum);
 //    }
 //};
+
+

@@ -45,34 +45,7 @@ public:
         }
     }
 
-//    //是祖先则包含。
-//    bool isancestoer(TreeNode* root, TreeNode* p, TreeNode* q){
-//        if(root==NULL){
-//            return false;
-//        }
-//        bool findp= false;
-//        bool findq = false;
-//        stack<TreeNode*> mystack;
-//        TreeNode* _p = root;
-//        while(_p!=NULL||!mystack.empty()){
-//            while (_p!=NULL){
-//                mystack.push(_p);
-//                _p = _p->left;
-//            }
-//            //出栈访问
-//            _p = mystack.top();
-//            if(_p==p){
-//                findp = true;
-//            }
-//            if(_p==q){
-//                findq = true;
-//            }
-//            if(findp&&findq)
-//                break;
-//            //转向右边
-//            _p = _p->right;
-//        }
-//
-//        return findp&&findq;
-//    }
+//review： left = lowestCommonAncestor(root->left, p, q)；
+//考虑返回NULL值，
+
 };
